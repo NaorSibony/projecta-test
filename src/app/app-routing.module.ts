@@ -9,7 +9,7 @@ const routes: Routes = [
   // route redirection - valid routes that have no view
   {
     path: '',
-    redirectTo: 'main',
+    redirectTo: 'main/registration',
     pathMatch: 'full'
   },
   // actual app tree
