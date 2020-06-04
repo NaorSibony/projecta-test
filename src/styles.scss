@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  * {
+    font-size: 18px;
+    font-family: ArialMT;
+    font-size: 18px;
+  }
+}
+
+.inactive {
+  opacity: 0.3;
+  pointer-events: none;
+  cursor: not-allowed;
+}

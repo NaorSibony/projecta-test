@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,7 +14,7 @@ import { LoaderLayoutComponent } from './view-model/general/layouts/loader-layou
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent, routingComponents, LoaderLayoutComponent],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [HeaderService, UserManagement, UserManager, UserRepository],
   bootstrap: [AppComponent]
 })

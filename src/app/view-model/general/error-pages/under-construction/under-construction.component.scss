@@ -1,4 +1,32 @@
+@import '../../../../../assets/scss/colors.scss';
+
 .form-box {
   border: 1px solid black;
-  height: 200px;
+}
+
+.indications {
+  margin-top: 10px;
+  span {
+    width: 20px;
+    display: inline-block;
+    &.valid {
+      &::after {
+        content: '✔︎';
+
+        color: $success;
+      }
+    }
+    &.invalid {
+      &::after {
+        content: '✘';
+        color: $error;
+      }
+    }
+    &::after {
+      letter-spacing: 0;
+      font-family: ZapfDingbatsITC;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
 }

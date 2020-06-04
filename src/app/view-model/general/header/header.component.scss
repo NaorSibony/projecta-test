@@ -1,6 +1,8 @@
+@import '../../../../assets/scss/colors.scss';
+
 .container-fluid {
   height: 60px;
-  background: black;
+  background: $black-bg;
   color: white;
 }
 
