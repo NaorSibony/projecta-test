@@ -4,18 +4,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserManagement } from './application-model/app-management/user-management';
-import { UserManager } from './application-model/app-manager/user-manager';
-import { UserRepository } from './application-model/app-repository/user-repository';
+import { NavigationService } from './application-model/services/navigation.service';
 import { FooterComponent } from './view-model/general/footer/footer.component';
 import { HeaderComponent } from './view-model/general/header/header.component';
-import { HeaderService } from './view-model/general/header/header.service';
+import { RegistrationPasswordComponent } from './view-model/general/inputs/password-with-indications/registration-password.component';
 import { LoaderLayoutComponent } from './view-model/general/layouts/loader-layout/loader-layout.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, routingComponents, LoaderLayoutComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    routingComponents,
+    LoaderLayoutComponent,
+    RegistrationPasswordComponent
+  ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
-  providers: [HeaderService, UserManagement, UserManager, UserRepository],
+  providers: [NavigationService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

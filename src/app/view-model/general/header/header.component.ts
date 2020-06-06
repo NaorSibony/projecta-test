@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HeaderService } from './header.service';
+import { NavigationService } from 'src/app/application-model/services/navigation.service';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +7,11 @@ import { HeaderService } from './header.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  constructor(private headerService: HeaderService) {}
+  constructor(private navigationService: NavigationService) {}
 
   ngOnInit(): void {}
 
   get headerTitle(): string {
-    return this.headerService.headerTitle;
+    return this.navigationService.headerTitle;
   }
 }

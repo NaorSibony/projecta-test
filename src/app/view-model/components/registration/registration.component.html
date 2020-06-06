@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="container-fluid form-box">
+    <form class="row mt-4" [formGroup]="registrationForm">
+      <div class="col-sm-6 col-12 form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter Email" formControlName="email" />
+      </div>
+      <div class="col-sm-6 col-12 form-group">
+        <app-registration-password [passwordControl]="passwordControl"></app-registration-password>
+      </div>
+      <button type="submit" class="btn btn-primary" [class.inactive]="registrationForm.invalid">Submit</button>
+    </form>
+  </div>
+</div>

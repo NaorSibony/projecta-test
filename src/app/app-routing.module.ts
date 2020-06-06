@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RegistrationComponent } from './view-model/components/registration/registration.component';
 import { PageNotFoundComponent } from './view-model/general/error-pages/page-not-found/page-not-found.component';
 import { UnderConstructionComponent } from './view-model/general/error-pages/under-construction/under-construction.component';
 import { MainComponent } from './view-model/main/main.component';
@@ -23,7 +24,10 @@ const routes: Routes = [
         children: [
           {
             path: 'registration',
-            component: UnderConstructionComponent
+            component: RegistrationComponent,
+            data: {
+              headerTitle: 'Registration'
+            }
           }
         ]
       }
@@ -41,4 +45,10 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
-export const routingComponents = [ShellComponent, MainComponent, UnderConstructionComponent, PageNotFoundComponent];
+export const routingComponents = [
+  ShellComponent,
+  MainComponent,
+  RegistrationComponent,
+  UnderConstructionComponent,
+  PageNotFoundComponent
+];
