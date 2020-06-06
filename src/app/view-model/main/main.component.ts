@@ -20,8 +20,7 @@ import { AbstractOnDestroyComponent } from '../general/miscellaneous/abstract-on
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent extends AbstractOnDestroyComponent implements OnInit {
-  @ViewChild(LoaderLayoutComponent)
-  loaderLayoutComponent: LoaderLayoutComponent;
+  @ViewChild(LoaderLayoutComponent) loaderLayoutComponent: LoaderLayoutComponent;
 
   constructor(private router: Router, private route: ActivatedRoute, private navigationService: NavigationService) {
     super();

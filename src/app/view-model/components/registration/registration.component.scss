@@ -3,3 +3,16 @@
 .form-box {
   border: 1px solid black;
 }
+button[type='submit'] {
+  background: $black-bg;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.under-input-errors-holder {
+  color: $error;
+  font-size: 12px;
+  * {
+    font-size: 12px;
+  }
+}

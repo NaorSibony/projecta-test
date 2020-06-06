@@ -12,13 +12,24 @@ export class RegistrationComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {}
 
-  get passwordControl(): AbstractControl {
-    return this.registrationForm.get('password');
-  }
   ngOnInit(): void {
     this.registrationForm = this.fb.group({
       email: ['', [Validators.required, Validators.pattern(emailRegex)]],
       password: ['']
     });
+  }
+
+  get emailControl(): AbstractControl {
+    return this.registrationForm.get('email');
+  }
+
+  get passwordControl(): AbstractControl {
+    return this.registrationForm.get('password');
+  }
+
+  submit(): void {
+    if (this.registrationForm.valid) {
+      // submit the form to the server
+    }
   }
 }

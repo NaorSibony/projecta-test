@@ -2,10 +2,10 @@
   <div class="row h-100">
     <div class="col-12 my-auto">
       <ng-container *ngIf="headerTitle; else logo">
-        <span>{{ headerTitle }}</span>
+        <h3>{{ headerTitle }}</h3>
       </ng-container>
     </div>
   </div>
 
-  <ng-template #logo><span>LOGO_OR_GENERIC_TITLE_PLACEHOLDER</span></ng-template>
+  <ng-template #logo><h3>LOGO_OR_GENERIC_TITLE_PLACEHOLDER</h3></ng-template>
 </div>
