@@ -6,4 +6,6 @@ Installation and running:
 npm i
 ng serve
 
-Change passwored configuration is possible from 'password-configurations.ts'. Go ahead and play with it :)
+“ng build” will create a deployable 'dist' folder
+
+Changing password configuration is possible from 'password-configurations.ts'. Go ahead and play with it :)
