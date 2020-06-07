@@ -1,5 +1,10 @@
 @import '../../../../assets/scss/colors.scss';
 
+.form-container {
+  padding: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
 .form-box {
   border: 1px solid black;
 }
@@ -14,5 +19,11 @@ button[type='submit'] {
   font-size: 12px;
   * {
     font-size: 12px;
+  }
+}
+
+@media (min-width: 576px) {
+  .form-container {
+    margin-top: 25vh;
   }
 }

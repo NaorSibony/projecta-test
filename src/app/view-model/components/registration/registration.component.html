@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container form-container">
   <div class="container-fluid form-box">
     <form class="row mt-4" [formGroup]="registrationForm" (submit)="submit()">
       <div class="col-sm-6 col-12 form-group">
@@ -6,9 +6,7 @@
         <input type="email" class="form-control" id="email" placeholder="Enter Email" formControlName="email" />
         <div class="under-input-errors-holder" *ngIf="emailControl.touched && emailControl.invalid">
           <span *ngIf="emailControl.hasError('required')">Required field</span>
-          <span *ngIf="!emailControl.hasError('required') && emailControl.hasError('pattern')"
-            >Invalid email pattern</span
-          >
+          <span *ngIf="!emailControl.hasError('required') && emailControl.hasError('pattern')">Invalid email pattern</span>
         </div>
       </div>
       <div class="col-sm-6 col-12 form-group">
