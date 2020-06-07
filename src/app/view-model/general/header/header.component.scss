@@ -1,7 +1,7 @@
 @import '../../../../assets/scss/colors.scss';
 
 .container-fluid {
-  height: 60px;
+  height: 70px;
   background: $black-bg;
   color: white;
 }
@@ -10,4 +10,8 @@
   .container-fluid {
     text-align: center;
   }
+}
+
+h1 {
+  font-size: 24px;
 }
