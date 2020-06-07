@@ -1,14 +1,15 @@
 @import '../../../../assets/scss/colors.scss';
 
 .header {
-  height: 60px;
-
   background: $black-bg;
   color: white;
   display: flex;
   .header-inner {
     margin: auto;
     margin-left: 15px;
+    * {
+      font-size: 24px;
+    }
   }
 }
 
