@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { strReplacementPlaceHolder } from '../../../../application-model/common/global-constants';
 import { registrationPasswordConfiguration } from '../../../../application-model/configurations/password-configurations';
 import { PasswordValidatorsOptions } from '../../../../application-model/validators/password-validators';
-import { AbstractPasswordWithIndicationsComponent, PasswordValidationType } from './password-with-indications.component';
+import { AbstractPasswordWithIndicationsComponent, PasswordIndication } from './password-with-indications.component';
 
 function replaceMinNum(strToReplace: string, replacement: number): string {
   return strToReplace.replace(strReplacementPlaceHolder, `${replacement}+`);
@@ -18,8 +18,13 @@ export class RegistrationPasswordComponent extends AbstractPasswordWithIndicatio
     return registrationPasswordConfiguration;
   }
 
-  getPasswordValidations(): PasswordValidationType {
+  getPasswordIndications(): PasswordIndication {
     return {
+      minChars: {
+        description: `${strReplacementPlaceHolder} characters`,
+        replacementStrategyMethod: replaceMinNum
+      },
+
       minLowerCase: {
         description: `${strReplacementPlaceHolder} lowercase letters`,
         replacementStrategyMethod: replaceMinNum

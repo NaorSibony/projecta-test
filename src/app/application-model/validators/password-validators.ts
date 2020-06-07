@@ -19,23 +19,18 @@ const specialCharStr = `^(.*?[*@!#$%&()^~{}]){${strReplacementPlaceHolder},}.*$`
 export function createPasswordValidators(options: PasswordValidatorsOptions): ValidatorFn[] {
   const passwordValidators: ValidatorFn[] = [];
 
-  // todo - see if we can generalize with a loop - WE SHOULDN'T
+  // todo? - see if we can generalize with a loop
+  // - chose not to, in order to keep decoupling and allow easier future changes
   if (options.minChars) {
-    const minCharsRegex: RegExp = new RegExp(
-      minCharsStr.replace(strReplacementPlaceHolder, options.minChars.toString())
-    );
+    const minCharsRegex: RegExp = new RegExp(minCharsStr.replace(strReplacementPlaceHolder, options.minChars.toString()));
     passwordValidators.push(regexValidator(minCharsRegex, { minChars: true }));
   }
   if (options.minLowerCase) {
-    const lowerCaseRegex: RegExp = new RegExp(
-      lowerCaseStr.replace(strReplacementPlaceHolder, options.minLowerCase.toString())
-    );
+    const lowerCaseRegex: RegExp = new RegExp(lowerCaseStr.replace(strReplacementPlaceHolder, options.minLowerCase.toString()));
     passwordValidators.push(regexValidator(lowerCaseRegex, { minLowerCase: true }));
   }
   if (options.minUpperCase) {
-    const upperCaseRegex: RegExp = new RegExp(
-      upperCaseStr.replace(strReplacementPlaceHolder, options.minUpperCase.toString())
-    );
+    const upperCaseRegex: RegExp = new RegExp(upperCaseStr.replace(strReplacementPlaceHolder, options.minUpperCase.toString()));
     passwordValidators.push(regexValidator(upperCaseRegex, { minUpperCase: true }));
   }
   if (options.minDigits) {
@@ -43,9 +38,7 @@ export function createPasswordValidators(options: PasswordValidatorsOptions): Va
     passwordValidators.push(regexValidator(digitRegex, { minDigits: true }));
   }
   if (options.minSpecialChars) {
-    const specialCharRegex: RegExp = new RegExp(
-      specialCharStr.replace(strReplacementPlaceHolder, options.minSpecialChars.toString())
-    );
+    const specialCharRegex: RegExp = new RegExp(specialCharStr.replace(strReplacementPlaceHolder, options.minSpecialChars.toString()));
     passwordValidators.push(regexValidator(specialCharRegex, { minSpecialChars: true }));
   }
 

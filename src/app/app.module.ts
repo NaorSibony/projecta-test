@@ -11,14 +11,7 @@ import { RegistrationPasswordComponent } from './view-model/general/inputs/passw
 import { LoaderLayoutComponent } from './view-model/general/layouts/loader-layout/loader-layout.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    routingComponents,
-    LoaderLayoutComponent,
-    RegistrationPasswordComponent
-  ],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, routingComponents, LoaderLayoutComponent, RegistrationPasswordComponent],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [NavigationService],
   bootstrap: [AppComponent]
