@@ -1,13 +1,22 @@
 @import '../../../../assets/scss/colors.scss';
 
-.container-fluid {
+.header {
   height: 60px;
+
   background: $black-bg;
   color: white;
+  display: flex;
+  .header-inner {
+    margin: auto;
+    margin-left: 15px;
+  }
 }
 
 @media (min-width: 576px) {
-  .container-fluid {
-    text-align: center;
+  .header {
+    .header-inner {
+      text-align: center;
+      margin-left: auto;
+    }
   }
 }

@@ -1,30 +1,29 @@
-<div class="container">
-  <div class="container-fluid form-box">
-    <form class="row mt-4" [formGroup]="registrationForm" (submit)="submit()">
-      <div class="col-sm-6 col-12 form-group">
+<div class="form-container">
+  <form class="form-box" [formGroup]="registrationForm" (submit)="submit()">
+    <div class="first">
+      <div class="email-input">
         <label for="email">Email</label>
         <input type="email" class="form-control" id="email" placeholder="Enter Email" formControlName="email" />
         <div class="under-input-errors-holder" *ngIf="emailControl.touched && emailControl.invalid">
           <span *ngIf="emailControl.hasError('required')">Required field</span>
-          <span *ngIf="!emailControl.hasError('required') && emailControl.hasError('pattern')"
-            >Invalid email pattern</span
-          >
+          <span *ngIf="!emailControl.hasError('required') && emailControl.hasError('pattern')">Invalid email pattern</span>
         </div>
       </div>
-      <div class="col-sm-6 col-12 form-group">
-        <app-registration-password [passwordControl]="passwordControl"></app-registration-password>
+      <div class="show-only-tablet">
+        <ng-container *ngTemplateOutlet="submitButton"></ng-container>
       </div>
-      <div class="col-6"></div>
-      <div class="col-12 col-sm-6">
-        <button
-          type="submit"
-          class="btn btn-primary"
-          [attr.tabIndex]="registrationForm.invalid ? -1 : 0"
-          [class.inactive]="registrationForm.invalid"
-        >
-          Submit
-        </button>
+    </div>
+    <div class="second">
+      <app-registration-password [passwordControl]="passwordControl"></app-registration-password>
+      <div class="hide-on-tablet">
+        <ng-container *ngTemplateOutlet="submitButton"></ng-container>
       </div>
-    </form>
-  </div>
+    </div>
+  </form>
 </div>
+
+<ng-template #submitButton>
+  <button type="submit" class="btn" [attr.tabIndex]="registrationForm.invalid ? -1 : 0" [class.inactive]="registrationForm.invalid">
+    Submit
+  </button>
+</ng-template>
